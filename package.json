@@ -1,0 +1,45 @@
+{
+  "name": "remoteai",
+  "version": "1.0.0",
+  "description": "One SDK. Every AI Provider. Unified wrapper for OpenAI, Anthropic, Google Gemini, Groq, Mistral & more — with smart routing, cost tracking, and fallback chains.",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node examples/basic.js"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "groq",
+    "mistral",
+    "ai-router",
+    "ai-gateway",
+    "remoteai",
+    "pulsedataengineer"
+  ],
+  "author": "PulseDataEngineer <info@pulsedataengineer.com> (https://pulsedataengineer.com)",
+  "license": "MIT",
+  "homepage": "https://pulsedataengineer.com/RemoteAI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pulsedataengineer/remoteai"
+  },
+  "bugs": {
+    "url": "https://github.com/pulsedataengineer/remoteai/issues",
+    "email": "info@pulsedataengineer.com"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
