@@ -126,6 +126,120 @@ console.log(usage.remainingRequests);  // 753
 
 ---
 
+## 🌍 Use From Any Language (REST API)
+
+The npm package is a JavaScript convenience wrapper. **Any language** can call RemoteAI directly via the REST API.
+
+### 🐍 Python / Jupyter Notebook
+
+```python
+import requests
+
+response = requests.post(
+    "https://pulsedataengineer.com/functions/remoteAIGateway",
+    json={
+        "action":       "generate",
+        "remoteai_key": "rai_your_key_here",
+        "prompt":       "Explain gradient descent simply.",
+        "strategy":     "auto",   # auto | cheapest | fastest | quality
+    }
+)
+
+data = response.json()
+print(data["text"])   # AI response
+print(data["meta"])   # provider, model, cost, latency, tokens saved
+```
+
+---
+
+### 🌐 cURL / REST
+
+```bash
+curl -X POST https://pulsedataengineer.com/functions/remoteAIGateway \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action":       "generate",
+    "remoteai_key": "rai_your_key_here",
+    "prompt":       "What is RAG in AI?",
+    "strategy":     "cheapest"
+  }'
+```
+
+---
+
+### 🟦 JavaScript (fetch — no npm needed)
+
+```js
+const response = await fetch("https://pulsedataengineer.base44.app/functions/remoteAIGateway", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    action:       "generate",
+    remoteai_key: "rai_your_key_here",
+    prompt:       "Summarize this article...",
+    strategy:     "fastest",
+  })
+});
+
+const data = await response.json();
+console.log(data.text);
+console.log(data.meta);
+```
+
+---
+
+### ♦️ R Language
+
+```r
+library(httr)
+library(jsonlite)
+
+response <- POST(
+  "https://pulsedataengineer.base44.app/functions/remoteAIGateway",
+  content_type_json(),
+  body = toJSON(list(
+    action       = "generate",
+    remoteai_key = "rai_your_key_here",
+    prompt       = "Explain linear regression.",
+    strategy     = "auto"
+  ), auto_unbox = TRUE)
+)
+
+data <- content(response, as = "parsed")
+cat(data$text)
+```
+
+---
+
+### 📡 API Response Format
+
+Every request returns:
+```json
+{
+  "text": "The AI response...",
+  "meta": {
+    "provider":        "groq",
+    "model":           "llama3-70b",
+    "latencyMs":       118,
+    "inputTokens":     42,
+    "outputTokens":    95,
+    "estimatedCostUsd": 0.0002
+  }
+}
+```
+
+---
+
+### 📋 Available Actions
+
+| Action | Description |
+|--------|-------------|
+| `generate` | Single prompt → AI response |
+| `register` | Get a free API key |
+| `usage` | Check your usage & limits |
+
+---
+
 ## 📄 License
 
 MIT © [PulseDataEngineer](https://pulsedataengineer.com)
