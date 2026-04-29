@@ -6,7 +6,7 @@
  * https://pulsedataengineer.com
  */
 
-const GATEWAY_URL = "https://pulsedataengineer.base44.app/functions/remoteAIGateway";
+const GATEWAY_URL = "https://pulsedataengineer.com/functions/remoteAIGateway";
 
 class RemoteAI {
   /**
