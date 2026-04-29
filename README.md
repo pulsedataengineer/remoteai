@@ -170,7 +170,7 @@ curl -X POST https://pulsedataengineer.com/functions/remoteAIGateway \
 ### 🟦 JavaScript (fetch — no npm needed)
 
 ```js
-const response = await fetch("https://pulsedataengineer.base44.app/functions/remoteAIGateway", {
+const response = await fetch("https://pulsedataengineer.com/functions/remoteAIGateway", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -195,7 +195,7 @@ library(httr)
 library(jsonlite)
 
 response <- POST(
-  "https://pulsedataengineer.base44.app/functions/remoteAIGateway",
+  "https://pulsedataengineer.com/functions/remoteAIGateway",
   content_type_json(),
   body = toJSON(list(
     action       = "generate",
